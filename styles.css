@@ -1,0 +1,204 @@
+/* ═══════════════════════════════════════════════════ */
+/* ARCHIVO: styles.css                                  */
+/* PROYECTO: TechWorld — Módulo 4 Docencia Técnica 2   */
+/* ═══════════════════════════════════════════════════ */
+
+/* ── 1. RESET BÁSICO Y VARIABLES ── */
+* {
+  margin: 0;
+padding: 0;
+  box-sizing: border-box; /* Evita que el padding desborde el ancho */
+}
+
+:root {
+  --color-primario:    #1E3A5F;  /* Azul oscuro del header */
+  --color-secundario:  #2E75B6;  /* Azul medio nav/botones */
+  --color-acento:      #F0A500;  /* Amarillo: resaltes     */
+  --color-fondo:       #F5F7FA;  /* Gris muy claro         */
+  --color-texto:       #2D2D2D;  /* Casi negro para leer   */
+  --fuente-principal:  Arial, Helvetica, sans-serif;
+  --borde-radio:       8px;
+}
+/* ── 2. ESTILOS GLOBALES ── */
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.7;
+}
+
+/* ── 3. HEADER ── */
+header {
+  background-color: var(--color-primario);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.1em;
+  opacity: 0.85;
+}
+
+/* ── 4. NAVEGACIÓN ── */
+nav {
+  background-color: var(--color-secundario);
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+}
+
+nav ul {
+  list-style: none;     /* Quita los puntos de la lista */
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: var(--borde-radio);
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: var(--color-acento);
+  color: var(--color-primario);
+}
+/* ── 5. MAIN — Layout principal ── */
+main {
+  max-width: 1100px;
+  margin: 30px auto;   /* Centra el contenido */
+  padding: 0 20px;
+  display: flex;
+  gap: 25px;
+}
+
+/* ── 6. SECTION — Área de noticias ── */
+section {
+  flex: 2;              /* Ocupa 2/3 del espacio */
+}
+
+section h2 {
+  color: var(--color-primario);
+  border-bottom: 3px solid var(--color-acento);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+/* ── 7. ARTICLE — Tarjetas de noticias ── */
+article {
+  background-color: white;
+  border-radius: var(--borde-radio);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+article h3 {
+  color: var(--color-secundario);
+  margin-bottom: 12px;
+}
+
+article img {
+width: 100%;
+  border-radius: var(--borde-radio);
+  margin-top: 15px;
+}
+
+/* ── 8. ASIDE — Barra lateral ── */
+aside {
+  flex: 1;              /* Ocupa 1/3 del espacio */
+  background-color: var(--color-primario);
+  color: white;
+  padding: 20px;
+  border-radius: var(--borde-radio);
+  height: fit-content;
+}
+
+aside h2 { color: var(--color-acento); margin-bottom: 12px; }
+/* ── 9. FORMULARIO DE CONTACTO ── */
+#contacto {
+  max-width: 700px;
+  margin: 40px auto;
+  background: white;
+  padding: 35px;
+  border-radius: var(--borde-radio);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+#contacto h2 {
+  color: var(--color-primario);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;       /* Pone el label en su propia línea */
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: var(--color-primario);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #CBD5E1;
+  border-radius: var(--borde-radio);
+  font-size: 1em;
+  margin-bottom: 20px;
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-secundario);
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: var(--color-secundario);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: var(--borde-radio);
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--color-primario);
+}
+
+/* ── 10. FOOTER ── */
+footer {
+  background-color: var(--color-primario);
+  color: white;
+  text-align: center;
+  padding: 25px 20px;
+  margin-top: 40px;
+}
+
+footer p { margin-bottom: 8px; opacity: 0.85; }
+/* ── 11. MENSAJE DE CONFIRMACIÓN DEL FORMULARIO ── */
+#mensaje-exito {
+  display: none;
+  background-color: #D5F5E3;
+  border: 2px solid #1A6B3C;
+  border-left: 6px solid #1A6B3C;
+  color: #1A6B3C;
+  padding: 18px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 1em;
+  line-height: 1.6;
+}

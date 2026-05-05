@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Metadatos: información SOBRE la página (no visible) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechWorld Santa Ana — Noticias de Tecnología</title>
+
+  <!-- ⭐ VINCULACIÓN con el archivo CSS externo (obligatorio) -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ═══════ 1. HEADER — Cabecera principal ═══════ -->
+  <header>
+    <h1>🌐 TechWorld - Santa Ana</h1>
+    <p>Tu portal de noticias sobre Inteligencia Artificial y Tecnología</p>
+  </header>
+
+  <!-- ═══════ 2. NAV — Barra de navegación ═══════ -->
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#noticias">Noticias</a></li>
+      <li><a href="#datos">Datos Curiosos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+<!-- ═══════ 3. MAIN — Contenido principal ═══════ -->
+  <main id="inicio">
+
+    <!-- ── SECTION: Bloque de noticias ── -->
+    <section id="noticias">
+      <h2>📰 Últimas Noticias</h2>
+
+      <!-- ARTICLE: noticia individual (autónoma) -->
+      <article>
+        <h3>La IA revoluciona la educación en 2026</h3>
+        <p>Los modelos de lenguaje están transformando la forma en que
+        los estudiantes aprenden. Desde tutores virtuales hasta evaluaciones
+        automáticas, la tecnología redefine el aula del futuro.</p>
+        <img src="https://picsum.photos/600/300?random=1" 
+             alt="Inteligencia Artificial en el aula">
+      </article>
+
+      <article>
+<h3>GitHub Copilot: el copiloto de los desarrolladores</h3>
+        <p>La herramienta de autocompletado de código impulsada por IA
+        ya cuenta con más de 2 millones de desarrolladores activos.</p>
+        <a href="https://en.wikipedia.org/wiki/GitHub_Copilot"
+           leermás>Leer más</a>
+      </article>
+      
+      <article>
+        <h3>Musk vs OpenAI: el juicio que define el futuro de la IA</h3>
+        <p>El conflicto entre Elon Musk y la empresa de inteligencia artificial 
+          OpenAI ha generado un gran debate sobre la dirección del desarrollo 
+          de la IA y su impacto en la sociedad.</p>
+          <a href="https://theairevolution.news/musk-vs-openai-el-juicio-que-define-el-futuro-de-la-ia/"
+          leermás>Leer más</a>
+      </article>
+
+    </section><!-- /noticias -->
+
+    <!-- ── ASIDE: Información lateral ── -->
+    <aside id="datos">
+      <h2>💡 Dato Curioso</h2>
+      <p>El primer programador de la historia fue Ada Lovelace en 1843.
+      Escribió el primer algoritmo destinado a ser procesado por una máquina.</p>
+    </aside>
+
+  </main><!-- /main -->
+<!-- ═══════ 4. FORMULARIO DE CONTACTO ═══════ -->
+  <section id="contacto">
+    <h2>✉️ Formulario de Contacto</h2>
+
+      <form id="formulario-contacto">
+
+      <!-- Campo 1: Nombre completo -->
+      <label for="nombre">Nombre completo *</label>
+      <input type="text" id="nombre" name="nombre"
+             placeholder="Ej: María García"
+             required>
+
+      <!-- Campo 2: Correo electrónico -->
+      <label for="email">Correo electrónico *</label>
+      <input type="email" id="email" name="email"
+             placeholder="usuario@ejemplo.com"
+             required>
+
+      <!-- Campo 3: Asunto -->
+      <label for="asunto">Asunto *</label>
+      <input type="text" id="asunto" name="asunto"
+             placeholder="¿De qué quieres hablar?"
+             required>
+
+      <!-- Campo 4: Mensaje -->
+      <label for="mensaje">Mensaje *</label>
+      <textarea id="mensaje" name="mensaje"
+                rows="5"
+                placeholder="Escribe tu mensaje aquí..."
+                required></textarea>
+
+      <!-- Campo 5: Botón de envío -->
+      <button type="submit">📨 Enviar Mensaje</button>
+
+ <div id="mensaje-exito"></div>
+    </form>
+  </section><!-- /contacto -->
+
+  <!-- ═══════ 5. FOOTER ═══════ -->
+  <footer>
+    <p></p><a href="https://github.com/masterhyuvini-tic/masterhyuvini-tic" style=color:red; font-size: 24px; target="_blank">
+      Mi GitHub</a></p>
+    <p>© 2026 TechWorld Santa Ana. Todos los derechos reservados.</p>
+    <p>Diseñado con HTML5 y CSS3 | Módulo 4 — Docencia Técnica 2</p>
+  </footer>
+
+ <script>
+    document.getElementById('formulario-contacto')
+      .addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var nombre  = document.getElementById('nombre').value;
+        var email   = document.getElementById('email').value;
+        var asunto  = document.getElementById('asunto').value;
+
+        var div = document.getElementById('mensaje-exito');
+        div.innerHTML =
+          '✅ <strong>Mensaje enviado correctamente.</strong><br>' +
+          'Gracias, <em>' + nombre + '</em>. Te contactaremos a ' +
+          '<strong>' + email + '</strong> sobre: "' + asunto + '".';
+        div.style.display = 'block';
+
+        this.reset();
+        div.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
